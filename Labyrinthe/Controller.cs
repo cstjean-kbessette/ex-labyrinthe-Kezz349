@@ -12,9 +12,32 @@
         }
         public void Run()
         {
-            view.AfficherEntete();
-            view.AfficherLabyrinthe(labyrinthe);
-            
+            bool exit = false;
+            while (!exit)
+            {
+                view.AfficherEntete();
+                view.AfficherLabyrinthe(labyrinthe);
+
+                ConsoleKeyInfo input = Console.ReadKey();
+
+                switch (input.Key)
+                {
+                    case ConsoleKey.W:
+                        labyrinthe.MoveUp();
+                        break;
+                    case ConsoleKey.S:
+                        labyrinthe.MoveDown();
+                        break;
+                    case ConsoleKey.A:
+                        labyrinthe.MoveLeft();
+                        break;
+                    case ConsoleKey.D:
+                        labyrinthe.MoveUp();
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }
