@@ -25,11 +25,13 @@
             {
                 for (int x = 0; x < labyrinthe.Map.GetLength(1); x++)
                 {
-                    Console.Write(labyrinthe.Map[x, y]);
-
-                    if (labyrinthe.Map[x, y])
+                    if (x == labyrinthe.PosX && y == labyrinthe.PosY)
                     {
-
+                        Console.Write("P");
+                    }
+                    else
+                    {
+                        Console.Write(labyrinthe.Map[x, y]);
                     }
                 }
                 Console.WriteLine();

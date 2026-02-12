@@ -32,10 +32,16 @@
                         labyrinthe.MoveLeft();
                         break;
                     case ConsoleKey.D:
-                        labyrinthe.MoveUp();
+                        labyrinthe.MoveRight();
                         break;
                     default:
                         break;
+                }
+
+                if (labyrinthe.isExit())
+                {
+                    view.AfficherVictoire();
+                    exit = true;
                 }
             }
         }
