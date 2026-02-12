@@ -12,7 +12,9 @@
         }
         public void Run()
         {
-
+            view.AfficherEntete();
+            view.AfficherLabyrinthe(labyrinthe);
+            
         }
     }
 }
