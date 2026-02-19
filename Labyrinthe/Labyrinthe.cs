@@ -26,6 +26,40 @@
             { '█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█' }
         };
 
+        public int PosX { get; private set; } = 1;
+        public int PosY { get; private set; } = 1;
 
+        public void MoveUp()
+        {
+            if (Map[PosX, PosY - 1] != '█')
+            {
+                PosY--;
+            }
+        }
+        public void MoveDown()
+        {
+            if (Map[PosX, PosY + 1] != '█')
+            {
+                PosY++;
+            }
+        }
+        public void MoveLeft()
+        {
+            if (Map[PosX - 1, PosY] != '█')
+            {
+                PosX--;
+            }
+        }
+        public void MoveRight()
+        {
+            if (Map[PosX + 1, PosY] != '█')
+            {
+                PosX ++;
+            }
+        }
+        public bool isExit()
+        {
+            return Map[PosX, PosY] == 'E';
+        }
     }
 }
