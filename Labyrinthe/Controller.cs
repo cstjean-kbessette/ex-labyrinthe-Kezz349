@@ -12,8 +12,7 @@
         }
         public void Run()
         {
-            bool exit = false;
-            while (!exit)
+            while (!labyrinthe.isExit())
             {
                 view.AfficherEntete();
                 view.AfficherLabyrinthe(labyrinthe);
@@ -41,13 +40,8 @@
                     default:
                         break;
                 }
-
-                if (labyrinthe.isExit())
-                {
-                    view.AfficherVictoire();
-                    exit = true;
-                }
             }
+            view.AfficherVictoire();
         }
     }
 }
